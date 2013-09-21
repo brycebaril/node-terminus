@@ -4,6 +4,7 @@
   "description": "An abstraction for making stream.Writable streams without all the boilerplate.",
   "main": "terminus.js",
   "directories": {
+    "example": "examples",
     "test": "test"
   },
   "scripts": {
@@ -27,5 +28,12 @@
   "devDependencies": {
     "tape": "~1.1.1",
     "through2-spy": "~1.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/brycebaril/node-terminus.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brycebaril/node-terminus/issues"
   }
 }
