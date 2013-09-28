@@ -22,11 +22,11 @@
   "dependencies": {
     "readable-stream": "~1.1.9",
     "xtend": "~2.1.1",
-    "bops": "0.0.6"
+    "bops": "0.0.7"
   },
   "devDependencies": {
     "tape": "~1.1.1",
-    "stream-spigot": "~2.1.1",
+    "stream-spigot": "~2.1.2",
     "through2-spy": "~1.1.0"
   },
   "repository": {
