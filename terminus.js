@@ -16,7 +16,6 @@ function noop (chunk, enc, callback) {
 
 function ctor (options, _write) {
   if (typeof options == "function") {
-    flush     = _write
     _write    = options
     options   = {}
   }
