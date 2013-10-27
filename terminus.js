@@ -52,10 +52,10 @@ function concat(options, fn) {
     options = {}
   }
   var terminus = make(options, function (chunk, encoding, callback) {
-    if (this._collection == null) this._collection = []
     this._collection.push(chunk)
     callback()
   })
+  terminus._collection = []
 
   terminus.on("finish", function () {
     if (options.objectMode)

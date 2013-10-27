@@ -109,7 +109,18 @@ test("concat", function (t) {
     t.equals(contents.toString(), input.join(""))
     t.end()
   }
-  spigot(input.slice(0))
+  spigot(input)
+    .pipe(terminus.concat(check))
+})
+
+test("concat empty", function (t) {
+  var input = []
+
+  function check(contents) {
+    t.equals(contents.toString(), "")
+    t.end()
+  }
+  spigot(input)
     .pipe(terminus.concat(check))
 })
 
