@@ -13,7 +13,7 @@ test("make", function (t) {
     t.equals(chunk.toString(), input[i++])
     callback()
   }
-  spigot(input.slice(0))
+  spigot(input)
     .pipe(terminus(check))
 })
 
@@ -28,12 +28,12 @@ test("ctor", function (t) {
   }
 
   var type = terminus.ctor(check)
-  spigot(input.slice(0))
+  spigot(input)
     .pipe(type())
 
   setTimeout(function () {
     i = 0
-    spigot(input.slice(0))
+    spigot(input)
       .pipe(type())
   }, 20)
 
@@ -54,7 +54,7 @@ test("objectMode", function (t) {
     t.deepEquals(chunk, input[i++])
     callback()
   }
-  spigot({objectMode: true}, input.slice(0))
+  spigot({objectMode: true}, input)
     .pipe(terminus({objectMode: true}, check))
 })
 
@@ -126,7 +126,7 @@ test("concat objectMode", function (t) {
     t.deepEquals(contents, input)
     t.end()
   }
-  spigot({objectMode: true}, input.slice(0))
+  spigot({objectMode: true}, input)
     .pipe(terminus.concat({objectMode: true}, check))
 })
 
@@ -143,7 +143,7 @@ test("tail", function (t) {
     t.equals(chunk.toString(), input[0])
   }
 
-  spigot(input.slice(0))
+  spigot(input)
     .pipe(terminus.tail(check))
 })
 
@@ -162,6 +162,6 @@ test("tail objectMode", function (t) {
     t.equals(chunk, input[chunkCount++])
   }
 
-  spigot({objectMode: true}, input.slice(0))
+  spigot({objectMode: true}, input)
     .pipe(terminus.tail({objectMode: true}, check))
 })
