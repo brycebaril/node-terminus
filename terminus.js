@@ -8,7 +8,6 @@ module.exports.tail = tail
 const Writable = require("stream").Writable || require("readable-stream/writable")
     , inherits = require("util").inherits
     , xtend    = require("xtend")
-    , bops     = require("bops")
 
 function noop (chunk, enc, callback) {
   callback()
@@ -61,7 +60,7 @@ function concat(options, fn) {
     if (options.objectMode)
       fn(this._collection)
     else
-      fn(bops.join(this._collection))
+      fn(Buffer.concat(this._collection))
   })
 
   return terminus
