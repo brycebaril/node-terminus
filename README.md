@@ -3,9 +3,6 @@ terminus
 
 [![NPM](https://nodei.co/npm/terminus.png)](https://nodei.co/npm/terminus/)
 
-[![david-dm](https://david-dm.org/brycebaril/node-terminus.png)](https://david-dm.org/brycebaril/node-terminus/)
-[![david-dm](https://david-dm.org/brycebaril/node-terminus/dev-status.png)](https://david-dm.org/brycebaril/node-terminus#info=devDependencies/)
-
 `terminus` makes it easier to create streams2 Writable streams. You can either use it like `through2` to eliminate subclassing boilerplate, or use one of the provided helper terminus streams.
 
 ```javascript
@@ -31,9 +28,9 @@ spigot(["my ", "dog ", "has ", "fleas"])
   .pipe(terminus(log))
 
 /*
-MY 
-DOG 
-HAS 
+MY
+DOG
+HAS
 FLEAS
 */
 
@@ -46,9 +43,9 @@ spigot(["my ", "dog ", "has ", "fleas"])
   .pipe(terminus.devnull())
 
 /*
-my 
-dog 
-has 
+my
+dog
+has
 fleas
 */
 
