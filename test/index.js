@@ -105,12 +105,15 @@ test("concat", function (t) {
     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
   ]
 
+  var concatStream = terminus.concat(check)
+
   function check(contents) {
+    t.equals(this, concatStream)
     t.equals(contents.toString(), input.join(""))
     t.end()
   }
   spigot(input)
-    .pipe(terminus.concat(check))
+    .pipe(concatStream)
 })
 
 test("concat empty", function (t) {
@@ -133,16 +136,19 @@ test("concat objectMode", function (t) {
     {foo: 5}
   ]
 
+  var concatStream = terminus.concat({objectMode: true}, check)
+
   function check(contents) {
+    t.equals(this, concatStream)
     t.deepEquals(contents, input)
     t.end()
   }
   spigot({objectMode: true}, input)
-    .pipe(terminus.concat({objectMode: true}, check))
+    .pipe(concatStream)
 })
 
 test("tail", function (t) {
-  t.plan(4)
+  t.plan(8)
   var input = [
     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
@@ -150,12 +156,15 @@ test("tail", function (t) {
     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
   ]
 
+  var tailStream = terminus.tail(check)
+
   function check(chunk) {
+    t.equals(this, tailStream)
     t.equals(chunk.toString(), input[0])
   }
 
   spigot(input)
-    .pipe(terminus.tail(check))
+    .pipe(tailStream)
 })
 
 test("tail objectMode", function (t) {

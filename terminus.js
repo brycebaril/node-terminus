@@ -58,9 +58,9 @@ function concat(options, fn) {
 
   terminus.on("finish", function () {
     if (options.objectMode)
-      fn(this._collection)
+      fn.call(this, this._collection)
     else
-      fn(Buffer.concat(this._collection))
+      fn.call(this, Buffer.concat(this._collection))
   })
 
   return terminus
@@ -72,7 +72,7 @@ function tail(options, fn) {
     options = {}
   }
   return make(options, function (chunk, encoding, callback) {
-    fn(chunk, encoding)
+    fn.call(this, chunk, encoding)
     return callback()
   })
 }
