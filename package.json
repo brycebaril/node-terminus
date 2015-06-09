@@ -27,9 +27,15 @@
     "xtend": "~4.0.0"
   },
   "devDependencies": {
-    "tape": "~3.0.1",
-    "stream-spigot": "~3.0.4",
+    "babelify": "~6.1.2",
+    "stream-spigot": "~3.0.5",
+    "tape": "~4.0.0",
     "through2-spy": "~1.2.0"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
   },
   "repository": {
     "type": "git",
