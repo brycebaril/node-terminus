@@ -1,6 +1,6 @@
 {
   "name": "terminus",
-  "version": "1.0.12",
+  "version": "1.1.0",
   "description": "An abstraction for making stream.Writable streams without all the boilerplate.",
   "main": "terminus.js",
   "directories": {
