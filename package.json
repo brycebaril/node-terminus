@@ -23,7 +23,7 @@
   "author": "Bryce B. Baril",
   "license": "MIT",
   "dependencies": {
-    "readable-stream": "~1.0.33",
+    "readable-stream": "~2.0.4",
     "xtend": "~4.0.0"
   },
   "devDependencies": {
